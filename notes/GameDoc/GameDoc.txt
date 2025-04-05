@@ -36,6 +36,8 @@ basic
 deamon attack
 [swords stuck in demons]
 
+intro cutscene
+[quest? cutscenes with choice]
 [blood particles]
 [home screen with title]
 [volume options]

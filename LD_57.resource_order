@@ -15,6 +15,16 @@
     {"name":"Notes","order":13,"path":"folders/Notes.yy",},
     {"name":"Extensions","order":14,"path":"folders/Extensions.yy",},
     {"name":"Particle Systems","order":15,"path":"folders/Particle Systems.yy",},
+    {"name":"demons","order":7,"path":"folders/Objects/demons.yy",},
+    {"name":"player","order":8,"path":"folders/Objects/player.yy",},
   ],
-  "ResourceOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"obj_after_image","order":1,"path":"objects/obj_after_image/obj_after_image.yy",},
+    {"name":"spr_sword","order":1,"path":"sprites/spr_sword/spr_sword.yy",},
+    {"name":"obj_swiper","order":1,"path":"objects/obj_swiper/obj_swiper.yy",},
+    {"name":"obj_sword","order":3,"path":"objects/obj_sword/obj_sword.yy",},
+    {"name":"spr_swiper","order":2,"path":"sprites/spr_swiper/spr_swiper.yy",},
+    {"name":"obj_entity","order":2,"path":"objects/obj_entity/obj_entity.yy",},
+    {"name":"obj_expert","order":2,"path":"objects/obj_expert/obj_expert.yy",},
+  ],
 }

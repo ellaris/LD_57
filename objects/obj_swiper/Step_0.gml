@@ -7,9 +7,9 @@ var _t_dir = point_distance(x,y,target_x,target_y) <= move_speed*2;
 var _p = instance_nearest(x,y,obj_player)
 var _dis = point_distance(x,y,_p.x,_p.y);
 
-if(_dis < 16 and attack_cooldown == 0)
+if(_dis < 16 and attack_cooldown == 0 and (not animation_callback))
 {
-	trigger_animation(20,rear,spr_swiper_rearing);
+	trigger_animation(30,rear,spr_swiper_rearing);
 	attack_cooldown = attack_cooldown_max;
 }
 

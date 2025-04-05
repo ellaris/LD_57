@@ -12,6 +12,7 @@ animation_sprite = spr_swiper;
 
 attack_cooldown = 0;
 attack_cooldown_max = obj_control.game_speed*1;
+default_sprite = spr_swiper;
 
 
 take_damage = function(_dmg){
@@ -19,6 +20,8 @@ take_damage = function(_dmg){
 	if(hp <= 0)
 		instance_destroy();
 	image_speed = hp/max_hp;
+	
+	part_particles_create(obj_control.particle_sword_hit_system,x,y,obj_control.particle_blood_drip_part,5);
 }
 
 trigger_animation = function(_delay, _callback, _sprite)
@@ -26,15 +29,15 @@ trigger_animation = function(_delay, _callback, _sprite)
 	animation_delay = _delay;
 	animation_callback = _callback;
 	sprite_index = _sprite;
-	image_speed = _delay/sprite_get_number(_sprite);
+	image_speed = sprite_get_number(_sprite)/_delay;
 }
 
 reset_animation = function(){
-	sprite_index = spr_player;
+	sprite_index = default_sprite;
 	animation_callback = noone;
 	animation_delay = 0;
 }
 
-wait = function(){
+stun = function(){
 	reset_animation();	
 }

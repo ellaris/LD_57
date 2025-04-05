@@ -26,7 +26,7 @@ impact = function(){
 	turn_speed -= 2;
 	strength -= 2;
 	hit_cooldown = hit_cooldown_max;
-	part_particles_burst(obj_control.particle_sword_hit_system, x, y, obj_control.particle_sword_hit_part);
+	part_particles_create(obj_control.particle_sword_hit_system, x, y, obj_control.particle_sword_hit_part,10);
 	
 	return(strength)
 }

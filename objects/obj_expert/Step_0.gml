@@ -17,15 +17,24 @@ if(_left or _right or _up or _down)
 		var _dir = point_direction(0,0,_right-_left,_down-_up);
 		x += lengthdir_x(move_speed,_dir);
 		y += lengthdir_y(move_speed,_dir);
+		reset_animation();
 }
 
 // summon sword
 if(sword_cooldown <= 0 and _mouse_left)
 {
-	summon_sword();
+	//summon_sword();
+	sword_cooldown = sword_cooldown_max;
+	trigger_animation(10,summon_sword,spr_player_casting)
 }
 
 
 // timers
 if(sword_cooldown > 0)
 	sword_cooldown -= 1;
+
+if(animation_delay > 0)
+	animation_delay -= 1;
+	
+if(animation_delay == 0 and animation_callback)
+	method_call(animation_callback,[]);

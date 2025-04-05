@@ -21,10 +21,14 @@
   "ResourceOrderSettings": [
     {"name":"obj_after_image","order":1,"path":"objects/obj_after_image/obj_after_image.yy",},
     {"name":"spr_sword","order":1,"path":"sprites/spr_sword/spr_sword.yy",},
+    {"name":"spr_swiper_swiping","order":5,"path":"sprites/spr_swiper_swiping/spr_swiper_swiping.yy",},
     {"name":"obj_swiper","order":1,"path":"objects/obj_swiper/obj_swiper.yy",},
+    {"name":"ps_sword_trail","order":1,"path":"particles/ps_sword_trail/ps_sword_trail.yy",},
     {"name":"obj_sword","order":3,"path":"objects/obj_sword/obj_sword.yy",},
     {"name":"spr_swiper","order":2,"path":"sprites/spr_swiper/spr_swiper.yy",},
     {"name":"obj_entity","order":2,"path":"objects/obj_entity/obj_entity.yy",},
     {"name":"obj_expert","order":2,"path":"objects/obj_expert/obj_expert.yy",},
+    {"name":"spr_player_casting","order":3,"path":"sprites/spr_player_casting/spr_player_casting.yy",},
+    {"name":"spr_swiper_rearing","order":4,"path":"sprites/spr_swiper_rearing/spr_swiper_rearing.yy",},
   ],
 }

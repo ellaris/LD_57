@@ -10,6 +10,9 @@ if( _num < floor(sqrt(level_depth*5)))
 	_summon.turn_to = choose(obj_swiper,obj_chainer,obj_bat);
 }
 
+if(level_depth == 10 and not instance_number(obj_npc_child))
+	instance_create_layer(room_width/2,room_height/2,layer,obj_npc_child);
+
 
 //with(obj_sword)
 //{
@@ -29,7 +32,7 @@ else
 if(speech_bubble_timer >= game_speed*3.5)
 	speech_bubble_text = "";
 	
-if(speech_bubble_cooldown == 0)
+if(speech_bubble_cooldown == 0 and not speech_bubble_forced)
 {
 	//speech_bubble_cooldown = speech_bubble_cooldown_max;
 	//speech_bubble_text = ;

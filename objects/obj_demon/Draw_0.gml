@@ -7,7 +7,7 @@
 draw_self();
 
 //draw shadow
-draw_sprite_ext(sprite_index,image_index,x,bbox_bottom,1,-0.2,image_angle,c_black,(image_alpha+0.5)/2)
+draw_sprite_ext(sprite_index,image_index,x,bbox_bottom+shadow_y_offset,1,-0.2,image_angle,c_black,(image_alpha+0.5)/2)
 
 
 draw_set_color(c_red);

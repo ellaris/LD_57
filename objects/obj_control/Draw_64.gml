@@ -9,49 +9,54 @@ draw_set_alpha(0.5);
 var _box_size = 32;
 var _margin = 8
 
+
+draw_sprite_ext(spr_sword,0,_margin+_box_size/2,_yy+_box_size/2,2,2,0,c_white,1);
 draw_rectangle(_margin,_yy+_box_size-_box_size*obj_expert.sword_cooldown/obj_expert.sword_cooldown_max,_margin+_box_size,_yy+_box_size,false)
 draw_set_alpha(1)
 draw_rectangle(_margin,_yy,_margin+_box_size,_yy+_box_size,true)
-draw_sprite_ext(spr_sword,0,_margin+_box_size/2,_yy+_box_size/2,2,2,0,c_white,1);
 draw_text(_margin*2+_box_size,_yy,"LMB")
 
 _yy += 32;
 
+
+draw_rectangle(_margin,_yy,_margin+_box_size,_yy+_box_size,true)
+draw_sprite_ext(spr_player,0,_margin+_box_size/2,_yy+_box_size/2,1,1,0,c_white,1);
 draw_set_alpha(0.5);
 draw_rectangle(8,_yy+_box_size-_box_size*obj_expert.dodge_cooldown/obj_expert.dodge_cooldown_max,_margin+_box_size,_yy+_box_size,false)
 draw_set_alpha(1)
-draw_rectangle(_margin,_yy,_margin+_box_size,_yy+_box_size,true)
-draw_sprite_ext(spr_player,0,_margin+_box_size/2,_yy+_box_size/2,1,1,0,c_white,1);
 draw_text(_margin*2+_box_size,_yy,"SPACE")
 
 _yy += 32;
 
+
+draw_rectangle(_margin,_yy,_margin+_box_size,_yy+_box_size,true)
+draw_sprite_ext(spr_depth_palm,0,_margin+_box_size/2,_yy+_box_size/2,0.5,0.5,0,c_white,1);
 draw_set_alpha(0.5);
 draw_rectangle(8,_yy+_box_size-_box_size*obj_expert.special_cooldown/obj_expert.special_cooldown_max,_margin+_box_size,_yy+_box_size,false)
 draw_set_alpha(1)
-draw_rectangle(_margin,_yy,_margin+_box_size,_yy+_box_size,true)
-draw_sprite_ext(spr_depth_palm,0,_margin+_box_size/2,_yy+_box_size/2,0.5,0.5,0,c_white,1);
 draw_text(_margin*2+_box_size,_yy,"RMB")
 
 _yy += 32;
 
+
+draw_rectangle(_margin,_yy,_margin+_box_size,_yy+_box_size,true)
+draw_circle(_margin+_box_size/2,_yy+_box_size/2,_box_size/3,true);
 draw_set_alpha(0.5);
 draw_rectangle(8,_yy+_box_size-_box_size*obj_expert.push_back_cooldown/obj_expert.push_back_cooldown_max,_margin+_box_size,_yy+_box_size,false)
 draw_set_alpha(1)
-draw_rectangle(_margin,_yy,_margin+_box_size,_yy+_box_size,true)
-draw_circle(_margin+_box_size/2,_yy+_box_size/2,_box_size/3,true);
 draw_text(_margin*2+_box_size,_yy,"Q")
 
 _yy += 32;
 
 
+
+draw_sprite_ext(spr_sword,0,_margin+_box_size/2-7,_yy+_box_size/2,2,2,270,c_white,1);
+draw_sprite_ext(spr_sword,0,_margin+_box_size/2,_yy+_box_size/2,2,2,270,c_white,1);
+draw_sprite_ext(spr_sword,0,_margin+_box_size/2+7,_yy+_box_size/2,2,2,270,c_white,1);
 draw_set_alpha(0.5);
 draw_rectangle(8,_yy+_box_size-_box_size*obj_expert.sword_array_cooldown/obj_expert.sword_array_cooldown_max,_margin+_box_size,_yy+_box_size,false)
 draw_set_alpha(1)
 draw_rectangle(_margin,_yy,_margin+_box_size,_yy+_box_size,true)
-draw_sprite_ext(spr_sword,0,_margin+_box_size/2-7,_yy+_box_size/2,2,2,270,c_white,1);
-draw_sprite_ext(spr_sword,0,_margin+_box_size/2,_yy+_box_size/2,2,2,270,c_white,1);
-draw_sprite_ext(spr_sword,0,_margin+_box_size/2+7,_yy+_box_size/2,2,2,270,c_white,1);
 draw_text(_margin*2+_box_size,_yy,"E")
 
 _yy += 32+16;
@@ -120,7 +125,7 @@ if(string_length(speech_bubble_text))
 	var _yratio = view_get_hport(view_current)/room_height
 	var _xsacle = 2.5;
 	var _text_xoffset = 0;
-	if(obj_expert.x < room_width/2)
+	if(_p.x > room_width/2)
 	{
 		//_xratio *= -1;
 		_xsacle *= -1;
@@ -134,8 +139,4 @@ if(string_length(speech_bubble_text))
 	draw_text_ext((_p.x)*_xratio+8+14+(8+6)*sign(_xsacle)-_text_xoffset,(_p.y)*_yratio-130-16,speech_bubble_text,-1,100);
 	draw_set_color(c_white);
 	
-	with(obj_expert)
-	{
-		
-	}
 }

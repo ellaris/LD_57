@@ -17,7 +17,7 @@ if(_t_dir or last_distance+distance_check < _dis)
 {
 	
 	var _dir = point_direction(_p.x,_p.y,x,y);
-	var _n = (_dis div distance_check);
+	var _n = ((room_height-_dis) div distance_check);
 	var _n_set = (room_height div distance_check)-_n
 	_dir += _n_set*10-irandom(_n_set*20);
 	
@@ -28,12 +28,12 @@ if(_t_dir or last_distance+distance_check < _dis)
 
 if(not animation_callback and _dis > 16)
 {
-	if(_p.y < y)
-	{
-		y -= move_speed*(1+hp/max_hp)/2;
-		//x -= sign(_p.x-x)*move_speed*(1+hp/max_hp)/2;
-	}
-	else
+	//if(_p.y < y)
+	//{
+	//	y -= move_speed*(1+hp/max_hp)/2;
+	//	//x -= sign(_p.x-x)*move_speed*(1+hp/max_hp)/2;
+	//}
+	//else
 	{
 	direction = point_direction(x,y,target_x,target_y);
 	speed = move_speed*hp/max_hp;

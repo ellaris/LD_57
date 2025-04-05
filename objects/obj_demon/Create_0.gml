@@ -17,6 +17,8 @@ default_sprite = sprite_index;
 target_x = 0;
 target_y = 0;
 
+shadow_y_offset = 0;
+
 take_damage = function(_dmg){
 	hp -= _dmg;
 	if(hp <= 0)

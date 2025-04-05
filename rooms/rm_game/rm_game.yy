@@ -11,6 +11,7 @@
     {"name":"inst_3D20959E","path":"rooms/rm_game/rm_game.yy",},
     {"name":"inst_15DC427C","path":"rooms/rm_game/rm_game.yy",},
     {"name":"inst_16C665FC","path":"rooms/rm_game/rm_game.yy",},
+    {"name":"inst_48C38AD6","path":"rooms/rm_game/rm_game.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -23,6 +24,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_16C665FC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_summoning","path":"objects/obj_summoning/obj_summoning.yy",},"properties":[
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_summoning","path":"objects/obj_summoning/obj_summoning.yy",},"propertyId":{"name":"turn_to","path":"objects/obj_summoning/obj_summoning.yy",},"value":"obj_chainer",},
           ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":288.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_48C38AD6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_npc","path":"objects/obj_npc/obj_npc.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":160.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4285164164,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

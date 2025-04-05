@@ -20,10 +20,12 @@
   ],
   "ResourceOrderSettings": [
     {"name":"obj_after_image","order":1,"path":"objects/obj_after_image/obj_after_image.yy",},
+    {"name":"obj_npc_child","order":10,"path":"objects/obj_npc_child/obj_npc_child.yy",},
     {"name":"spr_chain","order":14,"path":"sprites/spr_chain/spr_chain.yy",},
     {"name":"spr_sword","order":1,"path":"sprites/spr_sword/spr_sword.yy",},
     {"name":"spr_depth_palm","order":10,"path":"sprites/spr_depth_palm/spr_depth_palm.yy",},
     {"name":"spr_chainer_rearing","order":15,"path":"sprites/spr_chainer_rearing/spr_chainer_rearing.yy",},
+    {"name":"obj_npc","order":9,"path":"objects/obj_npc/obj_npc.yy",},
     {"name":"obj_depth_palm","order":4,"path":"objects/obj_depth_palm/obj_depth_palm.yy",},
     {"name":"spr_swiper_swiping","order":5,"path":"sprites/spr_swiper_swiping/spr_swiper_swiping.yy",},
     {"name":"obj_swiper","order":1,"path":"objects/obj_swiper/obj_swiper.yy",},

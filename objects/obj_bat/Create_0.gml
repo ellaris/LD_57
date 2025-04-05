@@ -15,6 +15,8 @@ last_distance = 0;
 max_hp = 50;
 hp = max_hp;
 
+shadow_y_offset = 20;
+
 rear = function(){
 	instance_create_layer(x,y,layer,obj_swipe);
 	trigger_animation(15,attack,spr_swiper_swiping);

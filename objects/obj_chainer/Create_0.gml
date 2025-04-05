@@ -31,3 +31,13 @@ attack = function(){
 	throw_chains = 0;
 	hit_player = false;
 }
+
+inherited_reset_animation = reset_animation;
+
+reset_animation = function(){
+	//sprite_index = default_sprite;
+	//animation_callback = noone;
+	//animation_delay = 0;
+	method_call(inherited_reset_animation,[]);
+	throw_chains = 0;
+}

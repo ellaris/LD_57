@@ -29,6 +29,7 @@ animation_sprite = spr_player;
 special_cooldown = 0;
 special_cooldown_max = obj_control.game_speed*3.2;
 special_delay = 25;
+special_flurry_hits = 3;
 
 sword_array_cooldown = 0;
 sword_array_cooldown_max = obj_control.game_speed*4.5;
@@ -117,7 +118,8 @@ take_damage = function(_dmg = 5){
 }
 
 special_attack = function(){
-	instance_create_layer(mouse_x,mouse_y,layer,obj_depth_palm);
+	var _fist = instance_create_layer(mouse_x,mouse_y,layer,obj_depth_palm);
+	_fist.hits = special_flurry_hits;
 	special_cooldown = special_cooldown_max;
 	trigger_animation(15,reset_animation,spr_player_casting);
 }

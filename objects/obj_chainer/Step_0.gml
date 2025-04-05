@@ -17,7 +17,7 @@ if(_dis < distance_check and attack_cooldown == 0 and (not animation_callback))
 	target_y = y+lengthdir_y(distance_check*2,_dir);
 }
 
-if(_t_dir or last_distance+distance_check < _dis)
+if((_t_dir or last_distance+distance_check < _dis) and (not animation_callback))
 {
 	
 	var _dir = point_direction(_p.x,_p.y,x,y);

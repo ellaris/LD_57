@@ -1,1 +1,41 @@
 Theme: Depths
+
+Idea
+
+story + fast paced gameplay
+
+a murim expert comes back to find his wife dead
+the people tell him that an evil cultivator has
+done uspekable things to her before she died
+after wards he was swiftly put to death and pagues
+this world no longer
+the expert curses them out and tells them such death
+was to good for the evil guy and that he will
+personally traverse the depths of hell to make
+sure the guy gets what he deserves.
+
+inDepth health system with limb hp and deep wounds
+camera and player move downwards through depths of hell
+flying swords go deep into the deamons bodies
+
+
+movement
+dash
+summon flying swords
+flying sword particles
+[abilities]
+[phoenix slash]
+[barier]
+[flying swords ai]
+
+
+deep summoning holes
+demons
+basic
+[]
+deamon attack
+[swords stuck in demons]
+
+[blood particles]
+[home screen with title]
+[volume options]

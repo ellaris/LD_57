@@ -11,7 +11,7 @@ if(arrival <= 0)
 	with(obj_demon)
 	if(point_distance(x,y,other.x+other.offset_x,other.y+other.offset_y) <= 38)
 	{
-		take_damage(15);
+		take_damage(25);
 		trigger_animation(60,stun,default_sprite);
 	}
 	

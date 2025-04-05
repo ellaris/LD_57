@@ -3,4 +3,7 @@
 
 
 
-turn_to = obj_swiper;
+//turn_to = obj_swiper;
+summon = true;
+life_max = obj_control.game_speed*1;
+life = life_max;

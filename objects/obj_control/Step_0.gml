@@ -4,10 +4,10 @@
 
 var _num = instance_number(obj_demon) + instance_number(obj_summoning);
 
-if( _num < level_depth)
+if( _num < floor(sqrt(level_depth*5)))
 {
 	var _summon = instance_create_layer(irandom(room_width),room_height-32,layer,obj_summoning);
-	_summon.turn_to = obj_swiper;
+	_summon.turn_to = choose(obj_swiper,obj_chainer,obj_bat);
 }
 
 
@@ -26,7 +26,7 @@ if(string_length(speech_bubble_text))
 else
 	speech_bubble_timer = 0;
 	
-if(speech_bubble_timer >= game_speed*4)
+if(speech_bubble_timer >= game_speed*3.5)
 	speech_bubble_text = "";
 	
 if(speech_bubble_cooldown == 0)

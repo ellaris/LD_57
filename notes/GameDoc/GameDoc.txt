@@ -24,6 +24,9 @@ dash
 summon flying swords
 flying sword particles
 [abilities]
+	Push back to all enemies and damage based on proximity
+	explosion on the character and all the swords
+	summon 10 swords
 [phoenix slash]
 [barier]
 [flying swords ai]

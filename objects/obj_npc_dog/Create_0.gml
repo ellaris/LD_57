@@ -11,8 +11,8 @@ event_inherited();
 forced_speech_list = [
 "What? There lives a dog in the depths of hell?", obj_control,
 "I better not deeply stare into ints deep puppy eyes", obj_control,
-"woof", obj_npc,
-"It must be some deep running scheme, I can't trust it", obj_control,
+" *woof*", obj_npc,
+"Might be some deep hellish scheme, better not trust it", obj_control,
 "*intense deep stare*", obj_npc,
 ];
 

@@ -19,7 +19,7 @@ life += 1;
 if(not instance_exists(obj_dog))
 	instance_destroy();
 
-if((life mod (obj_control.game_speed*15)) == 0)
+if((life mod (obj_control.game_speed*10)) == 0)
 {
 	if(speed == 0)
 		speed = 1;

@@ -55,6 +55,8 @@ for(var i = 0; i < array_length(hp_bars); i++)
 				take_damage(666);
 			with(obj_npc)
 				instance_destroy();
+			with(obj_summoning)
+				instance_destroy();
 		}
 		exit;
 	}
@@ -122,7 +124,7 @@ if(sword_array_cooldown <= 0 and _e_ability and not animation_callback)
 // push back
 if(push_back_cooldown <= 0 and _q_ability and not animation_callback)
 {
-	audio_play_sound(snd_push,5,false,0.7);
+	
 	trigger_animation(push_back_delay,push_back,spr_player_casting);
 	if(obj_control.speech_bubble_text == "" )
 		obj_control.set_text_bubble(choose("Back to the depths!","Deepen the distance between us","Deep friend zoning"))
@@ -147,7 +149,7 @@ if(sword_array_cooldown > 0)
 if(push_back_cooldown > 0)
 	push_back_cooldown -= 1/_cool_speed;
 	
-if(animation_delay == 0 and animation_callback)
+if(animation_delay <= 0 and animation_callback)
 	method_call(animation_callback,[]);
 	
 	

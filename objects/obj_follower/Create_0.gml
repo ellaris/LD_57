@@ -5,13 +5,13 @@
 sword_cooldown = 0;
 sword_cooldown_max = obj_control.game_speed*1.5;
 
-sword_strength = 6;
+sword_strength = obj_expert.sword_strength* 0.6;
 sword_hits = 2;
 sword_speed = 6;
-sword_turn_speed = 7;
+sword_turn_speed = obj_expert.sword_turn_speed*0.7;
 
 move_speed = 1.8;
-range_to_player = 128;
+range_to_player = 100;
 sword_summon_side = 0;
 
 

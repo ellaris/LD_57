@@ -45,6 +45,8 @@ if(instance_exists(obj_dog))
 
 if(level_depth > 720*depth_scaling and instance_number(obj_demon) == 0 and instance_number(obj_npc) == 0 and not game_over)
 {
+	with(obj_summoning)
+		instance_destroy();
 	game_over = true;
 	set_text_bubble("This is deep enough for LD57 thanks for playing");
 	speech_bubble_timer = -game_speed*30;
@@ -74,5 +76,5 @@ if(speech_bubble_cooldown == 0 and not speech_bubble_forced)
 {
 	//speech_bubble_cooldown = speech_bubble_cooldown_max;
 	//speech_bubble_text = ;
-	set_text_bubble(choose("How deep can I go?","Wow, the Depths of hell","Don't get lost in the depth of it's eyes"))
+	set_text_bubble(choose("How deep can I go?","Wow, the Depths of hell","Don't get lost in the depth of it's eyes","They deserve to suffer even deeper","Depth of my hearts pain eludes you!","I can't stay deep in my thoughts"))
 }

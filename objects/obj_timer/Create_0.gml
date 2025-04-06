@@ -2,5 +2,5 @@
 // W tym edytorze możesz zapisać swój kod
 
 
-timer = obj_control.game_speed*2;
+timer = obj_control.game_speed*2.5;
 

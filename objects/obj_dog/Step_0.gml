@@ -23,14 +23,14 @@ if(roll_count == roll_count_max)
 		var _p = instance_nearest(x,y,obj_player)
 		var _e = instance_nearest(x,y,obj_dog_eyeball)
 	
-		if(_e and _e.life > obj_control.game_speed*5)
+		if(_e and _e.life > obj_control.game_speed*4)
 		{
 			var _pd = point_distance(x,y,_p.x,_p.y);
 			var _ed = point_distance(x,y,_e.x,_e.y);
 			if(_ed < _pd)
 				_p = _e;
 		}
-		if(_e and _e.life > obj_control.game_speed*20)
+		if(_e and _e.life > obj_control.game_speed*15)
 			_p = _e;
 		
 		speed = move_speed;
@@ -69,6 +69,8 @@ if(attack_cooldown == 0 and not animation_callback)
 	}
 	
 	trigger_animation(_cc[0],_cc[1],_cc[2]);
+	
+	attack_cooldown = attack_cooldown_max;
 }
 	
 //if(eyeball_cooldown <= 0 and (left_eyeball or right_eyeball) and not animation_callback)

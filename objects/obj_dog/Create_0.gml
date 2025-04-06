@@ -13,15 +13,15 @@ hp = max_hp;
 
 move_speed = 2;
 
-attack_cooldown_max = obj_control.game_speed*1.0;
+attack_cooldown_max = obj_control.game_speed*1.2;
 
 default_sprite = spr_dog_real;
 
 roll_count_max = 5;
 roll_count = roll_count_max;
-roll_cooldown_max = obj_control.game_speed*1.5;
+roll_cooldown_max = obj_control.game_speed*2.2;
 roll_cooldown = 0;
-roll_delay = 20;
+roll_delay = 30;
 
 dog_roll = function(){
 	
@@ -29,13 +29,16 @@ dog_roll = function(){
 	if(roll_count > 0)
 	{
 		roll_count -= 1;
-		speed = move_speed*1.8;
+		speed = move_speed*2.2;
 		var _e = instance_nearest(x,y,obj_dog_eyeball);
 		var _p = instance_nearest(x,y,obj_player);
+		var _f = instance_nearest(x,y,obj_follower);
 		
 		var _choice = [];
 		if(_e)
 			array_push(_choice,point_direction(x,y,_e.x,_e.y));
+		if(_f)
+			array_push(_choice,point_direction(x,y,_f.x,_f.y));
 		array_push(_choice,point_direction(x,y,_p.x,_p.y));
 		array_push(_choice,point_direction(_p.x,_p.y,x,y));
 		array_push(_choice,point_direction(x,y,_p.x+irandom(64)-32,_p.y+irandom(64)-32));
@@ -43,20 +46,20 @@ dog_roll = function(){
 		array_push(_choice,point_direction(room_width/2,room_height/2,x,y));
 		
 		direction = array_shuffle(_choice)[0];
-		trigger_animation(15,dog_roll,default_sprite);
+		trigger_animation(8,dog_roll,default_sprite);
 	}
 	else
 	{
 		roll_cooldown = roll_cooldown_max;
 		roll_count = roll_count_max;
-		trigger_animation(30,reset_animation,default_sprite);
+		trigger_animation(20,reset_animation,default_sprite);
 	}
 }
 
 left_eyeball = true;
 right_eyeball = true;
 
-eyeball_cooldown_max = obj_control.game_speed*1.5;
+eyeball_cooldown_max = obj_control.game_speed*1.25;
 eyeball_cooldown = 0;
 eyeball_delay = 30;
 
@@ -84,12 +87,12 @@ eyeball_shoot = function(){
 	}
 	
 	if(left_eyeball or right_eyeball)
-		trigger_animation(10,eyeball_shoot,default_sprite);
+		trigger_animation(12,eyeball_shoot,default_sprite);
 	else
-		trigger_animation(10,reset_animation,default_sprite);
+		trigger_animation(25,reset_animation,default_sprite);
 }
 
-deep_pull_cooldown_max = obj_control.game_speed*2.5;
+deep_pull_cooldown_max = obj_control.game_speed*2.8;
 deep_pull_cooldown = 0;
 deep_pull_delay = 45;
 
@@ -108,7 +111,7 @@ deep_pull = function(){
 	{
 		
 		deep_pull_count = 0;
-		trigger_animation(10,reset_animation,default_sprite);
+		trigger_animation(25,reset_animation,default_sprite);
 	}
 	
 }

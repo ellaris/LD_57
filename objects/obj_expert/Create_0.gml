@@ -128,7 +128,7 @@ dodge = function(){
 
 take_damage = function(_dmg = 5){
 	if(obj_control.speech_bubble_text == "" and irandom(2) == 0)
-		obj_control.set_text_bubble(choose("Ow, that's a deep cut","That deeply hurt!","I feel deep shame for not avoiding taht one","My bad mood deepens"))
+		obj_control.set_text_bubble(choose("Ow, that's a deep cut","That deeply hurt!","I feel deep shame for not avoiding that one","My bad mood deepens"))
 
 	audio_play_sound(snd_player_hit,1,false);
 	
@@ -192,6 +192,7 @@ sword_array = function(){
 
 push_back = function(){
 	
+	audio_play_sound(snd_push,5,false,0.7);
 	with(obj_demon)
 	{
 		var _dis = point_distance(x,y,other.x,other.y);

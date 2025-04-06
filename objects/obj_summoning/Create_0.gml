@@ -2,6 +2,7 @@
 // W tym edytorze możesz zapisać swój kod
 
 
+sound = audio_play_sound(snd_summon,3,false,0.6);
 
 //turn_to = obj_swiper;
 summon = true;

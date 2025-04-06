@@ -30,18 +30,33 @@ for(var i = 0; i < array_length(hp_bars); i++)
 		switch(i)
 		{
 			case 0:
-			_move_speed += 1;
+			_move_speed += 0.5;
 			case 2:
 			case 3:
-			_cool_speed += 1;
+			_cool_speed += 0.5;
 			break;
 			case 4:
 			case 5:
-			_move_speed += 1;
+			_move_speed += 0.5;
 			break;
 			
 			
 		}
+	}
+	
+	if((i == 0 or i == 1) and _hp <= 0)
+	{
+		if(not obj_control.game_over)
+		{
+			obj_control.game_over = true;
+			obj_control.set_text_bubble("No, I haven't gotten nearly deep enough");
+			obj_control.speech_bubble_timer = -obj_control.game_speed*30;
+			with(obj_demon)
+				take_damage(666);
+			with(obj_npc)
+				instance_destroy();
+		}
+		exit;
 	}
 }
 
@@ -61,6 +76,8 @@ if((_left or _right or _up or _down) and animation_callback != dodge)
 			
 			with(obj_entity)
 				y += -_y_move/obj_control.depth_scaling;
+				
+			y += -_y_move/3;
 				
 			obj_control.level_depth += 1
 			layer_y(layer_get_id("Background"),-obj_control.level_depth/obj_control.depth_scaling);
@@ -105,6 +122,7 @@ if(sword_array_cooldown <= 0 and _e_ability and not animation_callback)
 // push back
 if(push_back_cooldown <= 0 and _q_ability and not animation_callback)
 {
+	audio_play_sound(snd_push,5,false,0.7);
 	trigger_animation(push_back_delay,push_back,spr_player_casting);
 	if(obj_control.speech_bubble_text == "" )
 		obj_control.set_text_bubble(choose("Back to the depths!","Deepen the distance between us","Deep friend zoning"))
@@ -115,7 +133,7 @@ if(sword_cooldown > 0)
 	sword_cooldown -= 1/_cool_speed;
 
 if(animation_delay > 0)
-	animation_delay -= 1/_cool_speed;
+	animation_delay -= 1;
 	
 if(dodge_cooldown > 0)
 	dodge_cooldown -= 1/_cool_speed;
@@ -132,3 +150,13 @@ if(push_back_cooldown > 0)
 if(animation_delay == 0 and animation_callback)
 	method_call(animation_callback,[]);
 	
+	
+
+if(x < 16)
+	x = 16;
+if(x > room_width-16)
+	x = room_width-16;
+if(y < 16)
+	y = 16;
+if(y > room_height-16)
+	y = room_height-16;

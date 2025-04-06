@@ -1,6 +1,8 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
 
+audio_play_sound(snd_music,8,true,0.6);
+
 // particles
 game_over = false;
 level_depth = 0;

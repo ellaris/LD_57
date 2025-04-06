@@ -21,6 +21,7 @@ choice_1 = function(){
 	obj_expert.hp_bars[choose(2,3)] = 0;
 	obj_control.set_text_bubble("It took a deep bite out of my hand!")
 	instance_create_layer(x,y,layer,obj_dog);
+	instance_create_layer(x,y,layer,obj_timer);
 }
 
 choice_2 = function(){
@@ -28,6 +29,7 @@ choice_2 = function(){
 	var _dog = instance_create_layer(x,y,layer,obj_dog);
 	_dog.hp -= 200;
 	obj_control.set_text_bubble("Go into a deep slumber")
+	instance_create_layer(x,y,layer,obj_timer);
 }
 
 choice_list = [

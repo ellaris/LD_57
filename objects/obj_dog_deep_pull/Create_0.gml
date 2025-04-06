@@ -5,3 +5,4 @@
 life = 0;
 
 player_hit = false;
+audio_play_sound(snd_deep_pull,4,false);

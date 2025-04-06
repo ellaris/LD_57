@@ -7,6 +7,7 @@ if(arrival > 0)
 	
 if(arrival <= 0)
 {
+	audio_play_sound(snd_fist,4,false);
 	
 	with(obj_demon)
 	if(point_distance(x,y,other.x+other.offset_x,other.y+other.offset_y) <= 38*image_xscale)

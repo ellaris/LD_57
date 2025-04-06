@@ -2,6 +2,8 @@
 // W tym edytorze możesz zapisać swój kod
 
 
+audio_play_sound_at(snd_swish,obj_expert.x-x,0,y,room_width/4,room_width/2,0.75,false,6,0.5);
+
 target_x = x;
 target_y = y;
 
@@ -21,6 +23,8 @@ set_target = function(_x,_y){
 }
 
 impact = function(){
+	audio_play_sound(snd_sword_hit,1,false,0.5);
+	
 	hits -= 1;
 	speed -= 1;
 	turn_speed -= 2;

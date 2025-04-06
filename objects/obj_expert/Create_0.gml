@@ -20,6 +20,7 @@ sword_casts = 1;
 sword_casts_left = 0;
 
 dodge_count = 0;
+dodge_count_max = 4;
 dodge_dir = 0;
 dodge_cooldown = 0;
 dodge_cooldown_max = obj_control.game_speed*2.0;
@@ -43,7 +44,7 @@ push_back_cooldown = 0;
 push_back_cooldown_max = obj_control.game_speed*5;
 push_back_delay = 5;
 push_back_damage_range = 128;
-push_back_push_range = 128*2
+push_back_push_range = 128*2;
 
 hp_head_max = 30;
 hp_head = hp_head_max;
@@ -104,6 +105,7 @@ summon_sword = function(){
 dodge = function(){
 	if(dodge_count == 0)
 	{
+		audio_play_sound(snd_dodge,4,false);
 		instance_create_layer(x,y,layer,obj_after_image);
 		if(instance_exists(obj_follower))
 		{
@@ -112,7 +114,7 @@ dodge = function(){
 		}
 	}
 	
-	if(dodge_count < 4)
+	if(dodge_count < dodge_count_max)
 		dodge_count += 1;
 	else
 	{
@@ -128,6 +130,8 @@ take_damage = function(_dmg = 5){
 	if(obj_control.speech_bubble_text == "" and irandom(2) == 0)
 		obj_control.set_text_bubble(choose("Ow, that's a deep cut","That deeply hurt!","I feel deep shame for not avoiding taht one","My bad mood deepens"))
 
+	audio_play_sound(snd_player_hit,1,false);
+	
 	hp_bars[irandom(array_length(hp_bars)-1)] -= _dmg;
 
 	part_particles_create(obj_control.particle_sword_hit_system,x,y,obj_control.particle_blood_drip_part,10);

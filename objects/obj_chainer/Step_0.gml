@@ -9,6 +9,7 @@ var _dis = point_distance(x,y,_p.x,_p.y);
 
 if(_dis < distance_check and attack_cooldown == 0 and (not animation_callback))
 {
+	audio_play_sound(snd_chainer_rearing,5,false,0.6);
 	throw_chains = 1;
 	trigger_animation(throw_chains_delay,rear,spr_chainer_rearing);
 	attack_cooldown = attack_cooldown_max;

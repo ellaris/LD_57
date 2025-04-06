@@ -10,7 +10,7 @@ part_particles_create(obj_control.particle_sword_trail_system,x+irandom(sprite_w
 //	instance_destroy();
 
 var _p = instance_place(x,y,obj_player);
-if(not player_hit and _p and image_index > image_number/2)
+if(not player_hit and _p and image_index > image_number/3*2)
 {
 	player_hit = true;
 	_p.take_damage(8);

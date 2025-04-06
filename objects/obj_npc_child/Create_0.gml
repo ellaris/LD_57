@@ -18,11 +18,13 @@ forced_speech_list = [
 choice_1 = function(){
 	// gives buff, like 2 dodge charges and simultanous sword cast
 	obj_expert.sword_casts += 1;
+	instance_create_layer(x,y,layer,obj_timer);
 }
 
 choice_2 = function(){
 	// he follows with mini skills or just casts swords from time to time
 	instance_create_layer(x,y,layer,obj_follower);
+	instance_create_layer(x,y,layer,obj_timer);
 }
 
 choice_list = [

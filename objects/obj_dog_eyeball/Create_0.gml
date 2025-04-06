@@ -8,3 +8,5 @@ speed = 4;
 hit_player = false;
 
 life = 0;
+
+audio_play_sound(snd_eyeball,4,false);

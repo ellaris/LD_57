@@ -43,10 +43,12 @@ if(instance_exists(obj_dog))
 	}
 }
 
-if(level_depth > 720*depth_scaling and instance_number(obj_demon) == 0 and not game_over)
+if(level_depth > 720*depth_scaling and instance_number(obj_demon) == 0 and instance_number(obj_npc) == 0 and not game_over)
 {
 	game_over = true;
 	set_text_bubble("This is deep enough for LD57 thanks for playing");
+	speech_bubble_timer = -game_speed*30;
+	speech_bubble_forced = true;
 }
 
 

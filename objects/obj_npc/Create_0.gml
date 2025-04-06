@@ -24,10 +24,14 @@ choice_1 = function(){
 	obj_expert.sword_hits += 1;
 	obj_expert.sword_strength += 4;
 	obj_expert.sword_turn_speed += 5;
+	obj_control.set_text_bubble("Casting requires Deep concentration (stand still)");
+	instance_create_layer(x,y,layer,obj_timer);
 }
 
 choice_2 = function(){
 	obj_expert.special_flurry_hits += 2;
+	obj_control.set_text_bubble("Casting requires Deep concentration (stand still)");
+	instance_create_layer(x,y,layer,obj_timer);
 }
 
 choice = false;
@@ -44,7 +48,7 @@ choice_list = [
 
 speech_bubble_timer = 0;
 speech_bubble_text = "";
-speech_bubble_cooldown = 0
+speech_bubble_cooldown = obj_control.game_speed*2;
 speech_bubble_cooldown_max = obj_control.game_speed*4;
 
 set_text_bubble = function(_text){

@@ -62,8 +62,7 @@ eyeball_delay = 30;
 
 eyeball_shoot = function(){
 	
-	
-	show_debug_message("shoot")
+	eyeball_cooldown = eyeball_cooldown_max;
 	
 	if(left_eyeball or right_eyeball)
 	{
@@ -80,7 +79,7 @@ eyeball_shoot = function(){
 		{
 			right_eyeball = false;
 			_eyeball.x += 5;
-			eyeball_cooldown = eyeball_cooldown_max;
+			
 		}
 	}
 	
@@ -98,6 +97,7 @@ deep_pull_count_max = 6;
 deep_pull_count = 0;
 
 deep_pull = function(){
+	deep_pull_cooldown = deep_pull_cooldown_max;
 	deep_pull_count += 1;
 	var _p = instance_nearest(x,y,obj_player);
 	instance_create_layer(_p.x,_p.y,layer,obj_dog_deep_pull);
@@ -106,7 +106,7 @@ deep_pull = function(){
 		trigger_animation(25,deep_pull,default_sprite);
 	else
 	{
-		deep_pull_cooldown = deep_pull_cooldown_max;
+		
 		deep_pull_count = 0;
 		trigger_animation(10,reset_animation,default_sprite);
 	}

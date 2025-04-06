@@ -1,7 +1,11 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
 
-
+if(instance_exists(obj_npc))
+	image_speed = 0
+else 
+if(image_speed == 0)
+	image_speed = 1;
 
 if(sprite_index == spr_dog_transformation)
 {

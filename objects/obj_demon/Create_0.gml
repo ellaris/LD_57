@@ -20,6 +20,8 @@ target_y = 0;
 shadow_y_offset = 0;
 
 take_damage = function(_dmg){
+	//audio_play_sound(snd_hit,1,false,0.7);
+	
 	hp -= _dmg;
 	if(hp <= 0)
 		instance_destroy();

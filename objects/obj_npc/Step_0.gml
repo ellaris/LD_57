@@ -16,7 +16,7 @@ if(speech_bubble_timer >= obj_control.game_speed*3.5)
 if(keyboard_check_pressed(vk_space))
 	speech_bubble_cooldown = 0;
 
-if(speech_bubble_cooldown == 0)
+if(speech_bubble_cooldown == 0 and not instance_exists(obj_demon))
 {
 	
 	if(forced_speech_index >= array_length(forced_speech_list))

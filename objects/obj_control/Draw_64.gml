@@ -1,6 +1,8 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
 
+
+draw_set_color(c_black);
 draw_text_ext(0,16,string("Depth of Hell: {0}",level_depth),-1,100);
 
 
@@ -137,6 +139,6 @@ if(string_length(speech_bubble_text))
 	
 	draw_set_color(c_black);
 	draw_text_ext((_p.x)*_xratio+8+14+(8+6)*sign(_xsacle)-_text_xoffset,(_p.y)*_yratio-130-16,speech_bubble_text,-1,100);
-	draw_set_color(c_white);
+	//draw_set_color(c_white);
 	
 }

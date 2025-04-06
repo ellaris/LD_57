@@ -8,6 +8,7 @@ offset_x = 10-irandom(20);
 offset_y = 10-irandom(20);
 
 hits = 3;
+strength = 20;
 
 arrival_angle = irandom(180-90);
 

@@ -1,10 +1,11 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
 
-image_speed = 0;
+//image_speed = 0;
 
 
 forced_speech_index = 0;
+obj_control.speech_bubble_forced = true;
 
 forced_speech_list = [
 "Master Dep-ths, my deepest condolences.", obj_npc,

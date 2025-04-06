@@ -2,7 +2,11 @@
 // W tym edytorze możesz zapisać swój kod
 
 // particles
-level_depth = 1;
+game_over = false;
+level_depth = 0;
+depth_scaling = 2;
+last_enemy_depth = 10;
+enemy_depth_interval = 30;
 
 particle_sword_trail_system = part_system_create();
 
@@ -35,6 +39,16 @@ part_type_life(particle_summon_part,8,15);
 part_type_speed(particle_summon_part,2,3,-0.05,0);
 part_type_direction(particle_summon_part,90,90,0,0);
 part_type_size(particle_summon_part,2,3,-0.02,0.02);
+
+particle_barrel_part = part_type_create();
+part_type_sprite(particle_barrel_part,spr_barrel_broken,0,0,1);
+//part_type_color2(particle_barrel_part,c_purple,c_fuchsia);
+part_type_life(particle_barrel_part,90,120);
+part_type_speed(particle_barrel_part,1,1.5,0,0);
+part_type_direction(particle_barrel_part,90-45,90+45,0,0);
+part_type_size(particle_barrel_part,1,1,-0.02,0.01);
+part_type_gravity(particle_barrel_part,0.05,270);
+part_type_orientation(particle_barrel_part,0,0,0,0.2,true);
 
 //particle_sword_trail_system = part_system_create(ps_sword_trail);
 //particle_sword_trail_emitter = particle_get_info(particle_sword_trail_system).emitters[0]

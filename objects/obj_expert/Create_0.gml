@@ -16,6 +16,9 @@ sword_strength = 10;
 sword_speed = 6;
 sword_turn_speed = 11;
 
+sword_casts = 1;
+sword_casts_left = 0;
+
 dodge_count = 0;
 dodge_dir = 0;
 dodge_cooldown = 0;
@@ -90,15 +93,27 @@ summon_sword = function(){
 	
 	sword_summon_side = not sword_summon_side;
 	sword_cooldown = sword_cooldown_max;
-	trigger_animation(4,reset_animation,spr_player_casting);
+	
+	sword_casts_left -= 1;
+	if(sword_casts_left > 0)
+		trigger_animation(3,summon_sword,spr_player_casting);
+	else
+		trigger_animation(4,reset_animation,spr_player_casting);
 }
 
 dodge = function(){
 	if(dodge_count == 0)
+	{
 		instance_create_layer(x,y,layer,obj_after_image);
+		if(instance_exists(obj_follower))
+		{
+			var _follower = instance_create_layer(obj_follower.x,obj_follower.y,layer,obj_after_image);
+			_follower.sprite_index = spr_npc_child;
+		}
+	}
 	
 	if(dodge_count < 4)
-		dodge_count += 1
+		dodge_count += 1;
 	else
 	{
 		dodge_count = 0;
@@ -110,7 +125,8 @@ dodge = function(){
 }
 
 take_damage = function(_dmg = 5){
-	obj_control.set_text_bubble(choose("Ow, that's a deep cut","That deeply hurt!"))
+	if(obj_control.speech_bubble_text == "" and irandom(2) == 0)
+		obj_control.set_text_bubble(choose("Ow, that's a deep cut","That deeply hurt!","I feel deep shame for not avoiding taht one","My bad mood deepens"))
 
 	hp_bars[irandom(array_length(hp_bars)-1)] -= _dmg;
 
@@ -122,6 +138,16 @@ special_attack = function(){
 	_fist.hits = special_flurry_hits;
 	special_cooldown = special_cooldown_max;
 	trigger_animation(15,reset_animation,spr_player_casting);
+	
+	if(instance_exists(obj_follower))
+	{
+		var _fist = instance_create_layer(room_width/3+irandom(room_width/3),room_height/3+irandom(room_height/3),layer,obj_depth_palm);
+		_fist.hits = floor(special_flurry_hits/2);
+		_fist.arrival = 30+irandom(30);
+		_fist.strength = 5;
+		_fist.image_xscale = 0.5;
+		_fist.image_yscale = 0.5;
+	}
 }
 
 sword_array = function(){

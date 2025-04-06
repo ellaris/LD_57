@@ -2,16 +2,52 @@
 // W tym edytorze możesz zapisać swój kod
 
 
-var _num = instance_number(obj_demon) + instance_number(obj_summoning);
 
-if( _num < floor(sqrt(level_depth*5)))
+if( last_enemy_depth < level_depth-enemy_depth_interval and not instance_exists(obj_dog))
 {
-	var _summon = instance_create_layer(irandom(room_width),room_height-32,layer,obj_summoning);
-	_summon.turn_to = choose(obj_swiper,obj_chainer,obj_bat);
+	repeat log10(level_depth)
+	{
+		var _summon = instance_create_layer(irandom(room_width),room_height-32,layer,obj_summoning);
+		_summon.turn_to = choose(obj_swiper,obj_chainer,obj_bat);
+	}
+	
+	last_enemy_depth = level_depth;
 }
 
-if(level_depth == 10 and not instance_number(obj_npc_child))
-	instance_create_layer(room_width/2,room_height/2,layer,obj_npc_child);
+//if(level_depth == 5*depth_scaling and not instance_number(obj_npc_child))
+//{
+//	instance_create_layer(room_width/2+64-irandom(128),room_height-32,layer,obj_npc);
+//	level_depth += 1;
+//}
+
+if(level_depth == 300*depth_scaling and not instance_number(obj_npc_child))
+{
+	instance_create_layer(room_width/2+64-irandom(128),room_height-32,layer,obj_npc_child);
+	level_depth += 1;
+}
+	
+if(level_depth == 720*depth_scaling and not instance_number(obj_npc_dog))
+{
+	instance_create_layer(room_width/2+64-irandom(128),room_height-32,layer,obj_npc_dog);
+	level_depth += 1;
+}
+
+if(instance_exists(obj_dog))
+{
+	
+	var _num = instance_number(obj_demon) + instance_number(obj_summoning);
+	if(_num < 1+2)
+	{
+		var _summon = instance_create_layer(irandom(room_width),room_height-32,layer,obj_summoning);
+		_summon.turn_to = choose(obj_swiper,obj_chainer,obj_bat);
+	}
+}
+
+if(level_depth > 720*depth_scaling and instance_number(obj_demon) == 0 and not game_over)
+{
+	game_over = true;
+	set_text_bubble("This is deep enough for LD57 thanks for playing");
+}
 
 
 //with(obj_sword)
